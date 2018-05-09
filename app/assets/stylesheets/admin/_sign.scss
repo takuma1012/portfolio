@@ -1,0 +1,66 @@
+// sign-up //
+#sign-box{
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 20px 60px 60px 60px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 50%;
+  color: white;
+}
+#sign-box .submit {
+  width: 80%;
+  height: 30px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: black;
+  background-color: #ffffff5c;
+  border: solid 2px #820000;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+#sign-box .submit:hover {
+  background: #800e0ea8;
+  color: white;
+}
+#sign-box div.field{
+	width: 40%;
+	margin: 10px;
+	display: inline-block;
+}
+#sign-box div.field-single{
+	width: 100%;
+}
+#sign-box .single{
+	width: 80%;
+}
+#sign-box .double{
+	width: 90%;
+}
+
+///sign-in///
+
+#sign-box div.field-login{
+	width: 50%;
+	margin: 10px auto;
+}
+#sign-box .login {
+  width: 45%;
+  height: 30px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: black;
+  background-color: #ffffff5c;
+  border: solid 2px #820000;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+#sign-box .login:hover {
+  background: #800e0ea8;
+  color: white;
+}

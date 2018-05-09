@@ -1,0 +1,18 @@
+<!-- 詳細 -->
+<%= content_tag(:div, class: ["lightbox", "cd#{a}", "clearfix"]) do %>
+	<div id="jacket-show">
+		<%= attachment_image_tag album, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '350', height: '350'%>
+	</div>
+	<div id="cd-detail">
+		<p class="title"><%= album.article_name %></p>
+		<hr width="100%">
+			<% album.tracks.each do |t| %>
+			<p class="track">
+				<%= t.track_num %>.<%= t.track_name %><br/>
+			<% end %></p>
+		<hr width="100%">
+		<p class="show-price">￥<%= album.price.to_s(:delimited) %>(tax-in)</p>
+	</div>
+	<%= link_to muzzle_orders_new_path(id: album.id) do %>
+	<button id="show-buy"><strong>Buy this</strong></button><% end %>
+<% end %>

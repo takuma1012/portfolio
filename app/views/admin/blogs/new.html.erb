@@ -1,0 +1,20 @@
+<div id="add-blog">
+
+<% if @blog.errors.any? %>
+  <div>
+    <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li style="list-style: none;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+	<h2>新規ブログ</h2>
+		<%= form_for @blog, url: admin_blogs_path, method: :post do |f| %>
+		<%= f.text_field :title, :size => "70%", :placeholder => "タイトルを入力してください" %>
+		<%= f.select :admin_id, [["roku", "1"], ["kyouki","2"]], :prompt => "選択" %>
+		<%= f.text_area :body, :rows => "35", :cols => "80", :placeholder => "本文を入力してください" %>
+	<button type="submit">投稿</button>
+	<% end %>
+</div>

@@ -1,0 +1,38 @@
+<div id="add-offshot">
+	<h2>Offshot追加</h2>
+	<%= form_for @off, url: admin_offshot_path, method: :post do |f| %>
+		<%= f.attachment_field :offshot_image %>
+		<!-- <button type="submit">ファイルを選択</button> -->
+		<%= f.select :admin_id, [["roku", "1"], ["kyouki","2"]], :prompt => "選択" %>
+		<button type="submit" class="sub">投稿</button>
+	<% end %>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ファイル名</th>
+				<th>日時</th>
+				<th>投稿者</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% @offshots.each_with_index do |off, i| %>
+			<tr>
+				<% binding.pry %>
+				<td><%= link_to admin_offshots_path, "data-featherlight" => ".off#{i}" do %>
+					<%= off.offshot_image_id %><% end %></td>
+				<td><%= off.created_at.strftime('%Y年%m月%d日 %H:%M') %></td>
+				<td><%= off.admin.name %></td>
+				<td><%= link_to admin_delete_offshot_path(off),  method: :delete, data: { confirm: 'Are you sure?' } do %>
+					<button class="delete">削除</button>
+					<% end %></td>
+			</tr>
+			<!-- 詳細 -->
+				<%= attachment_image_tag off, :offshot_image, format: 'jpg',
+				width: '100%', height: '100%', class: ["lightbox", "off#{i}"] %>
+		  <% end %>
+		</tbody>
+	</table>
+<%= paginate @offshots %>
+</div>

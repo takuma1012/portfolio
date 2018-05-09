@@ -1,0 +1,24 @@
+<div id="add-cd">
+	<h2>CD編集</h2>
+
+	<%= nested_form_for @cd, url: admin_cd_path, method: :patch do |f| %>
+		<%= f.text_field :article_name, :placeholder => "CD名", :size => "50%" %>
+		<%= f.attachment_field :article_image %><br>
+		<%= f.select :type, [["Single", "Single"], ["Album","Album"]] %>
+		<%= f.text_field :stock %>
+		<%= f.date_field :release_date %>
+		￥<%= f.text_field :price %><i>(tax-in)</i><br>
+
+			<%= f.fields_for :tracks do |ff| %>
+				<%= ff.number_field :track_num, :min => "1", :max => "99" %>
+				<%= ff.text_field :track_name, :size => "40%", :placeholder => "曲名" %>
+				<%= ff.text_field :composer, :placeholder => "作曲者"  %>
+				<%= ff.link_to_remove do %>
+				<button class="batsu">✖</button><% end %>
+			<% end %>
+
+		<%= f.link_to_add :tracks do %>
+		<button type="submit" class="add-track">Track追加</button><% end %>
+		<button type="submit">編集</button>
+	<% end %>
+</div>

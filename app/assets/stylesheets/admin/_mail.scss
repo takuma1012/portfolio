@@ -1,0 +1,35 @@
+// Place all the styles related to the Mails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*mail-confirm*/
+#mail-confirm{
+	background-color: rgba(255,255,255, .6);
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 30px 0;
+	width: 60%;
+	height: auto;
+}
+#mail-confirm table{
+	text-align: center;
+	margin: 0 auto;
+	padding: 40px;
+	border-collapse: collapse;
+	width: 80%;
+}
+#mail-confirm tr{
+	border: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: black;
+	height: 50px;
+}
+#mail p{
+	float: left;
+}
+#mail p.date{
+	float: right;
+	margin: 0;
+}

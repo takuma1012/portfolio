@@ -1,0 +1,26 @@
+<div id="sign-box">
+	<h1>MEMBER</h1>
+<table class="member">
+	<tbody>
+		<tr>
+			<td class="right">ニックネーム: </td>
+			<td class="left"> <%= current_user.nick_name %></td>
+		</tr>
+		<tr>
+			<td class="right">氏名: </td>
+			<td class="left"> <%= current_user.last_name %> <%= current_user.first_name %></td>
+		</tr>
+		<tr>
+			<td class="right">氏名(カナ): </td>
+			<td class="left"> <%= current_user.last_name_kana %> <%= current_user.first_name_kana %></td>
+		</tr>
+		<tr>
+			<td class="right">Email: </td>
+			<td class="left"> <%= current_user.email %></td>
+		</tr>
+	</tbody>
+</table>
+<%= link_to edit_user_registration_path do %>
+<button class="submit">会員情報編集</button><% end %>
+<p class="member_info">※メールアドレスを登録すると全コンテンツの閲覧及び、The Muzzleからの更新メールなどを受け取れます。</p>
+</div>

@@ -1,0 +1,9 @@
+<div id="add-blog">
+	<h2>ブログ編集</h2>
+	<%= form_for @blog, url: admin_blog_path, method: :patch do |f| %>
+		<%= f.text_field :title, :size => "70%" %>
+		<%= f.select :admin_id, [["roku", "1"], ["kyouki","2"]] %>
+		<%= f.text_area :body, :rows => "35", :cols => "80" %>
+	<button type="submit">編集</button>
+	<% end %>
+</div>

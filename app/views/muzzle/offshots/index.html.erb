@@ -1,0 +1,13 @@
+<div id="offbox">
+	<p style="font-family: Impact">Offshot</p>
+	<% @offshot.each_with_index do |off, i| %>
+		<%= link_to muzzle_offshots_path, "data-featherlight" => ".off#{i}" do %>
+			<%= attachment_image_tag off, :offshot_image, format: 'jpg',
+				width: '200', height: '200' %>
+		<% end %>
+
+<!-- 詳細 -->
+	<%= attachment_image_tag off, :offshot_image, format: 'jpg',
+				width: '100%', height: '100%', class: ["lightbox", "off#{i}"] %>
+	<% end %>
+</div>

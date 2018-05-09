@@ -1,0 +1,33 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*Countdown*/
+.count{
+	color: rgba(255, 255, 255, .3);
+	text-align: center;
+	font-size: 200px;
+	padding-top: 60px;
+}
+
+/*user*/
+table.member{
+  margin: 0 auto;
+}
+td.right{
+  text-align: right;
+  color: #949494;
+}
+td.left{
+  text-align: left;
+}
+p.member_info{
+  font-size: 12px;
+}
+#sign-box a{
+  color: white;
+}
+#sign-box a.retire:hover{
+  color: red;
+}

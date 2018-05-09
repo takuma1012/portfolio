@@ -1,0 +1,162 @@
+body{
+	background-image: url(/p0520.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	margin: 0 0 8px 0;
+	text-align: center;
+	padding-top: 150px;
+}
+button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	border: 1px;
+	border: solid 2px #000000;
+	border-radius: 3px;
+}
+button.delete{
+	width: 100%;
+	border-color: #9e3434;
+}
+button.delete:hover{
+	background-color: #9e343459;
+	color: white;
+}
+#add-cd button.batsu{
+	width: 5%;
+	border-color: #9e3434;
+}
+#add-cd button.batsu:hover{
+	background-color: #9e343459;
+	color: white;
+}
+button.edit{
+	width: 100%;
+	border-color: #267330;
+}
+button.edit:hover{
+	background-color: #26733059;
+	color: white;
+}
+button.update{
+	width: 100%;
+	border-color: #5a529a;
+}
+button.update:hover{
+	background-color: #5848d487;
+	color: white;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header{
+	height: 90px;
+	background-color: rgba(255,255,255,.6);
+}
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.logo{
+	color: white;
+	display: inline-block;
+}
+#nav{
+	height: 90px;
+	list-style: none;
+	margin: 0 auto;
+}
+#nav li{
+	float: left;
+	text-align: center;
+	width: 8%;
+	color: white;
+	line-height: 90px;
+	margin: 0 1%;
+}
+#nav li:hover{
+	line-height: 80px;
+	background-color: rgba(200,0,0,.6);
+	border:0;
+	border-bottom: 10px;
+	border-style: solid;
+	border-color: black;
+	transition: .4s;
+}
+#nav li.drower:hover{
+	line-height: 80px;
+	background-color: rgba(200,0,0,.6);
+	border:0;
+	transition: .4s;
+}
+#nav li.muzzle{
+	display: inline-block;
+	margin: auto;
+	height: 80px;
+	width: 200px;
+	line-height: 90px;
+	margin-right: 5%;
+	margin-top: 5px;
+}
+#nav li.muzzle:hover{
+	background-color: rgba(0,0,0,0);
+	line-height: 80px;
+	border:0;
+	border-bottom: 10px;
+	border-style: solid;
+	border-color: black;
+}
+#nav li ul{
+  display: none;
+  padding: 0;
+}
+
+#nav li:hover ul{
+  display: block;
+}
+
+#nav li ul li{
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  font-size: 12px;
+}
+#nav li ul li:hover{
+  background-color: rgba(0,0,0,0);
+  border-bottom: 10px;
+  border-style: solid;
+  border-color: black;
+  font-size: 16px;
+}
+
+@import "blog";
+@import "cd";
+@import "interview";
+@import "item";
+@import "mail";
+@import "muzzles";
+@import "offshot";
+@import "order";
+@import "root";
+@import "user";
+@import "sign";

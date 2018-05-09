@@ -1,0 +1,33 @@
+<div id="mail-confirm">
+	<h2>メール一覧</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>件名</th>
+				<th>送信者</th>
+				<th>送信日時</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @mails.each_with_index do |mail, i| %>
+			<tr>
+				<td><%= link_to admin_mails_path, "data-featherlight" => ".mail#{i}" do %>
+				<%= mail.title %><% end %></td>
+				<td><%= mail.name %></td>
+				<td><%= mail.created_at.strftime('%Y年%m月%d日 %H:%M') %></td>
+			</tr>
+			<!-- 詳細 -->
+			  <%= content_tag(:div, class: ["lightbox", "mail#{i}"]) do %>
+				<h3><%= mail.title %></h3>
+				<hr width="100%" color="black">
+				<p><%= simple_format(mail.body) %></p>
+				<hr width="100%" color="black">
+				<p　class="name"><%= mail.name %></p>
+				<p class="date"><%= mail.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+			  <% end %>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @mails %>
+</div>
+

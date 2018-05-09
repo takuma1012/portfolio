@@ -1,0 +1,69 @@
+ja:
+  activerecord:
+    models:
+      admin:      管理者
+      article:    商品
+      blog:       ブログ
+      contact:    メール
+      delivery:   配送先
+      history:    購入履歴
+      interview:  インタビュー
+      offshot:    オフショット
+      track:      曲
+      user:       アカウント
+    attributes:
+      article:
+        article_name:     商品名
+        price:            値段
+        stock:            在庫
+        release_date:     発売日
+        article_image_id: 商品画像
+        type:             タイプ
+      article/tracks:
+        article_id: 商品ID
+        track_name: 曲名
+        track_num:  曲No.
+        lyric:      作詞者
+        composer:   作曲者
+      contact:
+        name: 　名前
+        title: 件名
+        body: 　本文
+      blog:
+        admin_id: 管理者
+        title:    タイトル
+        body:     本文
+
+    ### deviseの日本語化 ###
+      user:
+        nick_name:      　ニックネーム
+        last_name:       姓
+        last_name_kana:  セイ
+        first_name:      名
+        first_name_kana: メイ
+        password:        パスワード
+        email:           メールアドレス
+        mail_flg:        メール配信
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+
+      history:
+        last_name:       姓
+        last_name_kana:  セイ
+        first_name:      名
+        first_name_kana: メイ
+        postal_code:     郵便番号
+        prefecture:      都道府県
+        city:            市区町村
+        address:         番地
+        building:        建物名
+        phone:           電話番号
+
+    ### pagenationの日本語化 ###
+  views:
+    pagination:
+      first:    "最初"
+      last:     "最後"
+      previous: "前"
+      next:     "次"
+      truncate: "..."

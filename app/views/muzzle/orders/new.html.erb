@@ -1,0 +1,111 @@
+<div id="line-up">
+
+<% if @orders.errors.any? %>
+  <div>
+    <ul>
+      <% @orders.errors.full_messages.each do |message| %>
+        <li style="list-style: none; color: black;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @arts.blank? %>
+
+	<h1>※商品が選択されていません※</h1>
+
+<% else %>
+
+	<h1>ご購入確認</h1>
+		<%= form_with(model: @orders, url: muzzle_orders_path, datakey: ENV['PAYJP_API_KEY'], html:{name: "form1"} , local: true) do |f| %>
+	<table id="table">
+		<tr>
+			<th>商品名</th>
+			<th>価格</th>
+			<th>数量</th>
+			<th>小計</th>
+		</tr>
+		<% @arts.each_with_index do |art, i| %>
+		<%= f.fields_for :article_histories do |ah| %>
+		<tr>
+			<%= ah.hidden_field :article_id, value: art.id %>
+			<td><%= art.article_name %></td>
+			<td><%= art.price %></td>
+			<td><%= ah.number_field :quantity, max:10, min:1, id:"qty#{i}", onChange: "keisan()", value:0 %></td>
+			<%= content_tag(:td, '', id: "field#{i}") do %><%= 0.to_s(:delimited) %><% end %>
+		</tr>
+		<% end %>
+		<% end %>
+	</table>
+	<h2 class="h3-dest">送り先</h2>
+	<div id="cart-destination">
+		<i style="float: none"><strong>※送料は全国一律 ￥510 です</i></strong><br>
+		<div class="form_box">
+			<%= f.label :姓 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :last_name, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :名 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :first_name, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :セイ %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :last_name_kana, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :メイ %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :first_name_kana, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :郵便番号 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :postal_code, :size => "50%", class: "double", placeholder: "ハイフンなし", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :都道府県 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.collection_select(:prefecture, @prefectures, :prefecture, :prefecture, :prompt => "選択してください") %>
+		</div>
+		<div class="form_box">
+			<%= f.label :市区町村 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :city, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box">
+			<%= f.label :番地 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :address, :size => "50%", class: "double", required: true %>
+		</div>
+		<div class="form_box-lg">
+			<%= f.label :"マンション・アパート名" %><br>
+			<%= f.text_field :building, :size => "50%", class: "single" %>
+		</div>
+		<div class="form_box-lg">
+			<%= f.label :電話番号 %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :phone, :size => "50%", class: "single", placeholder: "ハイフンなし", required: true %>
+		</div>
+		<div class="form_box-lg">
+			<%= f.label :Email %> <i style="font-size: 14px; color: #860000">※必須</i><br>
+			<%= f.text_field :email, :size => "50%", class: "single", required: true %>
+		</div>
+		<div class="form_box-lg">
+			<%= f.label :備考欄 %><br>
+			<%= f.text_area  :note, :size => "50%", class: "single" %>
+		</div>
+	</div>
+
+	<h2 id="payment">お支払い方法</h2>
+	<%= f.select :payment, [["振込み", "振込み"], ["クレジット","クレジット"]], {
+	 :prompt => "選択してください"}, onchange: "entryChange2();", id: "changeSelect", required: true %><br>
+	<div id="creditBox">
+		<%= text_field_tag  'number', 	'',	max: 16, placeholder: "カード番号" %>
+		<%= text_field_tag  'cvc',		'',	max: 3,  placeholder: "CVC" %><br>
+		<%= text_field_tag  'exp_month','', max: 2,  placeholder: "月" %>
+		<%= text_field_tag  'exp_year', '',	max: 4,  placeholder: "西暦" %>
+		<%= hidden_field_tag 'amount', '', :id => "amount", value: 0 %>
+	</div>
+
+	<h2>合計</h2>
+	<%= f.hidden_field :price, id: "sum", value: 0 %>
+	<p><strong>￥ <%= content_tag(:span, '', id: "field_total") %>- (税、送料込)</strong></p>
+
+	<button type="submit" id="fom1-buy"><strong>購入確定</strong></button>
+	<% end %>
+<% end %>
+</div>

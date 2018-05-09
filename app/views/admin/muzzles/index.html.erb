@@ -1,0 +1,23 @@
+<div id="mail-confirm">
+	<h2>会員一覧</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>ニックネーム</th>
+				<th>姓名</th>
+				<th>アドレス</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.nick_name %></td>
+				<td><%= user.last_name %> <%= user.first_name %></td>
+				<td><%= user.email %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @users %>
+</div>
+

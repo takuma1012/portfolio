@@ -1,0 +1,20 @@
+<div id="formarea">
+
+<% if @contacts.errors.any? %>
+  <div>
+    <ul>
+      <% @contacts.errors.full_messages.each do |message| %>
+        <li style="list-style: none; color: white;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+	<h1>Contact</h1>
+	<%= form_for @contacts, url: muzzle_contacts_path, method: :post do |f| %>
+	<%= f.text_field :name,  :size => "50%", :placeholder => "お名前を入力してください" %><br>
+	<%= f.text_field :title, :size => "50%", :placeholder => "件名を入力してください" %><br>
+	<%= f.text_area  :body,  :rows => "20", :cols => "50%", :placeholder => "本文を入力してください" %><br>
+	<%= f.submit "送信",class: "btn-send" %>
+	<% end %>
+</div>

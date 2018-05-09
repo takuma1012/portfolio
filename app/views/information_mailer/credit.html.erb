@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1><%= @order.last_name %><%= @order.first_name %> 様</h1>
+	<p>この度は TheMuzzle で商品をお買い上げいただきありがとうございます。<br>
+	<br>
+		商品の準備ができ次第、順次発送いたします。<br>
+		商品到着まで楽しみにお待ちください。<br>
+		<br>
+		明細発行日: <%= Date.today.strftime("%Y-%m-%d") %>
+		<hr>
+		<br>
+		◆ご注文内容<br>
+		<br>
+		<% @art_hist.each do |ah| %>
+			<%= ah.article.article_name %>× <%= ah.quantity %> <br>
+		<% end %>
+		<br>
+		<hr>
+		<br>
+		◆お買い上げ合計金額: ￥<%= @order.price.to_s(:delimited) %>(税,送料込み)<br>
+		<br>
+		<hr>
+		<br>
+		◆お届け先情報<br>
+		<%= @order.postal_code.insert(3, '-') %><br>
+		<%= @order.prefecture %> <%= @order.city %><br>
+		<%= @order.address %> <%= @order.building %><br>
+		<br>
+		<hr>
+		<br>
+		これからもThe Muzzleを宜しくお願い致します。
+	</p>
+  </body>
+</html>

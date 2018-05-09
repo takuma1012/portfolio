@@ -1,0 +1,19 @@
+<!-- 詳細 -->
+<%= content_tag(:div, class: ["lightbox", "cd#{s}", "clearfix"]) do %>
+	<div id="jacket-show">
+		<%= attachment_image_tag single, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '350', height: '350'%>
+	</div>
+	<div id="cd-detail">
+		<p class="title"><%= single.article_name %></p>
+		<hr width="100%">
+			<% single.tracks.each do |t| %>
+			<p class="track">
+				<%= t.track_num %>.<%= t.track_name %><br/>
+			<% end %></p>
+		<hr width="100%">
+		<p class="show-price">￥<%= single.price.to_s(:delimited) %>(tax-in)</p>
+	</div>
+	<%= link_to muzzle_orders_new_path(id: single.id) do %>
+		<button id="show-buy"><strong>Buy this</strong></button>
+	<% end %>
+<% end %>

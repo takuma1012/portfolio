@@ -1,0 +1,59 @@
+History.seed do |s|
+	s.id				= 1
+	s.last_name			= "河原野"
+	s.last_name_kana	= "カワラノ"
+	s.first_name		= "河童"
+	s.first_name_kana	= "カッパ"
+	s.postal_code		= "1710056"
+	s.prefecture		= "東京都"
+	s.city				= "豊島区"
+	s.address			= "南長崎5-3-16"
+	s.building			= "高島アパートメント403"
+	s.phone				= "09074070000"
+	s.email				= "sample@gmail.com"
+	s.note				= "特になし"
+	s.price				= "7350"
+	s.payment			= "クレジット"
+	s.status			= "発送済み"
+	s.pay_status		= "済"
+end
+
+History.seed do |s|
+	s.id				= 2
+	s.last_name			= "平林"
+	s.last_name_kana	= "ヒラバヤシ"
+	s.first_name		= "拓麻"
+	s.first_name_kana	= "タクマ"
+	s.postal_code		= "3540036"
+	s.prefecture		= "埼玉県"
+	s.city				= "富士見市"
+	s.address			= "ふじみ野東1-23-10"
+	s.building			= ""
+	s.phone				= "09012344321"
+	s.email				= "muzzle@gmail.com"
+	s.note				= "右のインターホンです"
+	s.price				= "15578"
+	s.payment			= "クレジット"
+	s.status			= "未配送"
+	s.pay_status		= "済"
+end
+
+History.seed do |s|
+	s.id				= 3
+	s.last_name			= "例江場"
+	s.last_name_kana	= "タトエバ"
+	s.first_name		= "タト恵"
+	s.first_name_kana	= "タトエ"
+	s.postal_code		= "1230000"
+	s.prefecture		= "沖縄県"
+	s.city				= "那覇市"
+	s.address			= "新京極12-3-4"
+	s.building			= "琉球タワー1205"
+	s.phone				= "09010101010"
+	s.email				= "example@gmail.com"
+	s.note				= ""
+	s.price				= "1850"
+	s.payment			= "振込み"
+	s.status			= "未配送"
+	s.pay_status		= "未払い"
+end

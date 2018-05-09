@@ -1,0 +1,39 @@
+<div id="index-cd">
+	<h2>GOODS一覧</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>CD名</th>
+				<th>リリース日</th>
+				<th>在庫</th>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @items.each_with_index do |item, i| %>
+			<tr>
+				<td><%= link_to admin_items_path, "data-featherlight" => ".item#{i}" do %>
+					<%= item.article_name %><% end %></td>
+				<td><%= item.release_date %></td>
+				<td><%= item.stock %></td>
+				<td><%= link_to admin_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+					<button class="delete">削除</button><% end %></td>
+			</tr>
+			<!-- 詳細 -->
+				<%= content_tag(:div, class: ["lightbox", "item#{i}"]) do %>
+					<div class="jacket">
+						<%= attachment_image_tag item, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '300', height: '300'%>
+					</div>
+					<div class="cd-detail">
+						<p class="title"><%= item.article_name %></p>
+						<hr width="100%">
+						<p class="show-price">￥ <%= item.price.to_s(:delimited) %>(tax-in)</p>
+					</div>
+					<%= link_to edit_admin_item_path(item) do %>
+						<button class="edit">編集</button><% end %>
+				<% end %>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @items %>
+</div>

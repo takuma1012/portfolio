@@ -1,0 +1,108 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+# Japanase translation for devise
+
+ja:
+  devise:
+    confirmations:
+      #Your email address has been successfully confirmed.
+      confirmed: "アカウントが確認されました。ログインしています。"
+      #You will receive an email with instructions for how to confirm your email address in a few minutes.
+      send_instructions: "アカウントの確認方法をメールでご連絡します"
+      #If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes.
+      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します"
+    failure:
+      #You are already signed in.
+      already_authenticated: "ログイン済みです"
+      #Your account is not activated yet.
+      inactive: "アカウントが有効になっていません"
+      #Invalid email or password.
+      invalid: "メールまたはパスワードが違います"
+      #Your account is locked.
+      locked: "アカウントはロックされています"
+      #You have one more attempt before your account is locked.
+      last_attempt: "もう一度間違えるとアカウントがロックされます"
+      not_found_in_database: "Invalid %{authentication_keys} or password."
+      #Your session expired. Please sign in again to continue.
+      timeout: "一定時間が経過したため、再度ログインが必要です"
+      #You need to sign in or sign up before continuing.
+      unauthenticated: "ログインしてください"
+      #You have to confirm your email address before continuing.
+      unconfirmed: "登録してください"
+    mailer:
+      confirmation_instructions:
+        #Confirmation instructions
+        subject: "アカウントの登録方法"
+      reset_password_instructions:
+        #Reset password instructions
+        subject: "パスワードの再設定"
+      unlock_instructions:
+        #Unlock instructions
+        subject: "アカウントのロック解除"
+      email_changed:
+        #Email Changed
+        subject: "メールを変更しました"
+      password_change:
+        #Password Changed
+        subject: "パスワードを変更しました"
+    omniauth_callbacks:
+      #Could not authenticate you from %{kind} because \"%{reason}\".
+      failure: "%{kind} から承認されませんでした。理由：%{reason}"
+      #Successfully authenticated from %{kind} account.
+      success: "%{kind} から承認されました"
+    passwords:
+      #You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
+      no_token: "URLが正しくありません"
+      #You will receive an email with instructions on how to reset your password in a few minutes.
+      send_instructions: "パスワードのリセット方法をメールにてご連絡します"
+      #If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+      send_paranoid_instructions: "メールアドレスが登録済みの場合、メールアドレスにパスワード回復リンクが届きます"
+      #Your password has been changed successfully. You are now signed in.
+      updated: "パスワードを変更しました。ログイン済みです。"
+      #Your password has been changed successfully.
+      updated_not_active: "パスワードを変更しました"
+    registrations:
+      #Bye! Your account has been successfully cancelled. We hope to see you again soon.
+      destroyed: "ご利用ありがとうございました。アカウントが削除されました。"
+      #Welcome! You have signed up successfully.
+      signed_up: "アカウント登録が完了しました"
+      #You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+      signed_up_but_inactive: "アカウントは登録されていますが、アクティブでないため利用できません"
+      #You have signed up successfully. However, we could not sign you in because your account is locked.
+      signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません"
+      #A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
+      signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。記載のリンクからアカウントを有効にしてください。"
+      #You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address.
+      update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを送信しましたので、リンクから更新を有効にしてください。"
+      #Your account has been updated successfully.
+      updated: "アカウントを更新しました"
+    sessions:
+      #Signed in successfully.
+      signed_in: "ログインしました"
+      #Signed out successfully.
+      signed_out: "ログアウトしました"
+      #Signed out successfully.
+      already_signed_out: "ログアウト済みです"
+    unlocks:
+      #You will receive an email with instructions for how to unlock your account in a few minutes.
+      send_instructions: "アカウントのロックを解除する方法をメールで送ります"
+      #If your account exists, you will receive an email with instructions for how to unlock it in a few minutes.
+      send_paranoid_instructions: "アカウントが存在する場合、ロックを解除する方法をメールで送ります"
+      #Your account has been unlocked successfully. Please sign in to continue.
+      unlocked: "アカウントのロックが解除されました。ログインしています"
+  errors:
+    messages:
+      #was already confirmed, please try signing in
+      already_confirmed: "は既に登録済みです。ログインしてください"
+      #needs to be confirmed within %{period}, please request a new one
+      confirmation_period_expired: "%{period}以内に確認する必要がありますので、新しくリクエストしてください"
+      #has expired, please request a new one
+      expired: "有効期限切れです。新規登録してください。"
+      #not found
+      not_found: "は見つかりませんでした"
+      #was not locked
+      not_locked: "ロックされていません"
+      not_saved:
+        #1 error prohibited this %{resource} from being saved:
+        one: "エラーにより、この%{resource}　を保存できません"
+        #%{count} errors prohibited this %{resource} from being saved:
+        other: "%{count} 個のエラーにより、この %{resource} を保存できません"

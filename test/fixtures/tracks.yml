@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cd_id: 
+  track_name: MyString
+  track_num: 1
+  lyric: MyString
+  composer: MyString
+
+two:
+  cd_id: 
+  track_name: MyString
+  track_num: 1
+  lyric: MyString
+  composer: MyString

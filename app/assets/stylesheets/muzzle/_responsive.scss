@@ -1,0 +1,215 @@
+
+
+// レスポンシブ
+
+@media screen and (max-width:425px) {
+html{
+  margin-top: auto!important;
+  width: 100%;
+}
+body{
+  padding: 0 5px;
+  padding-top: 90px;
+  margin: 0 auto;
+}
+#nav{
+  display: none;
+}
+#nav li{
+  display: none;
+}
+img.drawer-toggle{
+  margin: 8px 0;
+  display: inline-block;
+}
+.drawer--top.drawer-open .drawer-nav{
+  height: 100%;
+  background-color: rgba(0,0,0,.6)!important;
+  top: 90px!important;
+}
+ul.drawer-menu a li{
+  font-size: 20px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+}
+.drawer-open .drawer-overlay{
+  z-index: -100;
+}
+#pop{
+  margin-top: 30px;
+}
+#pop .clearfix{
+  margin-top: 0;
+  padding-top: 0!important;
+}
+#pop div.jacket{
+  display: block;
+  margin: 0 auto!important;
+}
+#pop img{
+  width: 100%;
+  max-height: 300px;
+  margin: 0;
+  display: block;
+}
+#pop img.main{
+  display: none;
+}
+#pop p{
+  font-size: 100px!important;
+}
+#index{
+  width: 100%;
+  padding: 0;
+  margin-top: 30px;
+}
+#cd-index{
+  margin: 0 auto;
+}
+.tabs{
+  padding-left: 20px;
+}
+#jacket-show img{
+  width: 100%;
+  max-width: 260;
+  height: 260px;
+}
+#cd-detail{
+  width: 100%;
+}
+#cd-detail p{
+  font-size: 16px;
+}
+#cd-detail p.track{
+  font-size: 10px;
+}
+#offbox{
+  padding-top: 40px;
+  width: 100%;
+  margin-top: 30px;
+}
+#offbox p{
+  display: none;
+}
+#offbox img{
+  width: 100px;
+  height: 100px;
+}
+div.featherlight .featherlight-content{
+  max-width: 90%;
+}
+#self-box{
+  width: 100%;
+  padding: 0;
+  margin: 30px 0;
+}
+#self-box h1{
+  padding-top: 5px;
+  font-size: 20px;
+}
+#self-box th.date{
+  display: none;
+}
+#self-box td.date{
+  display: none;
+}
+div.lightbox h2{
+  font-size: 16px;
+}
+div.lightbox p{
+  font-size: 12px;
+}
+#blog-box{
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+#blog-box h3{
+  font-size: 16px;
+}
+#blog-box p{
+  font-size: 12px;
+}
+#blog-box a{
+  font-size: 12px;
+}
+#formarea{
+  width: 100%;
+  margin-top: 30px;
+  padding: 0;
+}
+#formarea h1{
+  padding-top: 5px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+#formarea input{
+  width: 80%;
+}
+#formarea textarea{
+  width: 80%;
+}
+form.new_contact{
+  width: 100%;
+}
+#line-up{
+  width: 100%;
+  padding: 15px 0;
+}
+#line-up h1{
+  font-size: 20px;
+  margin: auto;
+}
+#line-up h2{
+  font-size: 20px;
+}
+#cart-destination{
+  text-align: center;
+}
+#cart-destination label, #cart-destination i{
+  font-size: 12px;
+  float: left;
+}
+#cart-destination input{
+  font-size: 12px;
+}
+#cart-destination select{
+  width: 95%;
+  font-size: 12px;
+}
+#cart-destination div.form_box-lg{
+  margin: auto;
+}
+#sign-box{
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+#sign-box h1{
+  font-size: 16px;
+}
+#sign-box td{
+  font-size: 12px;
+}
+#sign-box p{
+  font-size: 10px;
+}
+#sign-box input, #sign-box label, #sign-box i{
+  font-size: 12px;
+}
+#sign-box input.double{
+  width: 98%;
+}
+#sign-box input.single{
+  width: 88%;
+}
+#send{
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+}
+#send h1{
+  font-size: 20px;
+}
+}

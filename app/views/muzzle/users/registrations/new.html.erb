@@ -1,0 +1,57 @@
+<div id="sign-box">
+
+  <h1>Sign up</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field-single">
+      <%= f.label :ニックネーム %><br />
+      <%= f.text_field :nick_name, class: "single", required: true %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :姓 %><br />
+      <%= f.text_field :last_name, class: "double", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :名 %><br />
+      <%= f.text_field :first_name, class: "double", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :セイ %><br />
+      <%= f.text_field :last_name_kana, class: "double", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :メイ %><br />
+      <%= f.text_field :first_name_kana, class: "double", required: true %>
+    </div>
+
+    <div class="field-single">
+      <%= f.label :Email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "single", required: true %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :Password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "double", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "double", required: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: "submit" %>
+    </div>
+  <% end %>
+
+  <%= render "/muzzle/users/shared/links" %>
+</div>

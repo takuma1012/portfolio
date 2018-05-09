@@ -1,0 +1,45 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*blog*/
+#select{
+	background-color: rgba(255, 255, 255, .6);
+	margin-top: 60px;
+	margin-left: 8%;
+	width: 10%;
+	float: left;
+	position: fixed;
+}
+#select ul{
+	padding-left: 0;
+	text-align: center;
+	list-style: none;
+}
+#select li{
+	padding: 10px 0;
+}
+
+#blog-box{
+	width: 50%;
+	position: right;
+	margin: 60px auto;
+	margin-right: 25%;
+	background-color: rgba(255, 255, 255, .6);
+	word-break: break-all;
+}
+#blog-box h3{
+	font-size: 30px;
+	padding-top: 20px;
+	height: 5px;
+}
+#blog-box hr{
+	border-color: rgba(0, 0, 0, .4);
+}
+#blog-box p{
+	padding: 0 10%;
+}
+.date{
+	display: inline-block;
+	padding-bottom: 20px;
+}

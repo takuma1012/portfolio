@@ -1,0 +1,50 @@
+<div id="admin-info">
+	<h2>お知らせ</h2>
+
+	<hr>
+	<%# binding.pry %>
+	<% if @newmail.present? %>
+		<%= link_to admin_mails_path do %>
+		<p>新着メールが <%= @newmail.length %> 件</p><% end %>
+	<% else %>
+		<p>新着メールはありません</p>
+	<% end %>
+
+	<% if @newhist.present? %>
+		<%= link_to admin_orders_path do %>
+		<p>新着購入が <%= @newhist.length %> 件</p><% end %>
+	<p>あります</p>
+	<% else %>
+		<p>新着購入はありません</p>
+	<% end %>
+	<hr>
+
+</div>
+
+<div id="add-list">
+	<h2>新規追加</h2>
+	<%= form_for @main, url: admin_tops_path, method: :patch do |f| %>
+		<%= f.label :"TOP画像" %>
+		<%= f.attachment_field :main_image %>
+		<button type="submit">変更</button>
+	<% end %>
+	<hr>
+	<ul>
+			<%= link_to new_admin_cd_path do %>
+		<li>CD</li><% end %>
+			<%= link_to new_admin_item_path do %>
+		<li>Goods</li><% end %>
+			<%= link_to new_admin_interview_path do %>
+		<li>Interview</li><% end %>
+			<%= link_to new_admin_blog_path do %>
+		<li>Blog</li><% end %>
+			<%= link_to admin_offshots_path do %>
+		<li>Offshot</li><% end %>
+	</ul>
+	<hr>
+	<%= form_for @news, url: admin_top_path, method: :post do |f| %>
+		<%= f.label :"新規 TOPIC" %><br>
+		<%= f.text_area :notice, rows: "1", cols: "100" %>
+		<button type="submit">投稿</button>
+	<% end %>
+</div>

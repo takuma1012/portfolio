@@ -1,0 +1,52 @@
+// Place all the styles related to the Offshots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*add-offshot*/
+#add-offshot{
+	background-color: rgba(255,255,255, .6);
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 30px 0;
+	width: 80%;
+	height: auto;
+}
+#add-offshot button{
+	border: 1px;
+    border: solid 2px #000000;
+    border-radius: 3px;
+    width: 20%;
+    margin: 5px 0;
+}
+#add-offshot button.sub{
+	width: 5%;
+}
+#add-offshot button:hover{
+	background-color: rgba(0,0,0,.6);
+	color: white;
+}
+#add-offshot button.sub:hover{
+	background-color: #2347738c;
+}
+#add-offshot table{
+	text-align: center;
+	margin: 0 auto;
+	padding: 40px;
+	border-collapse: collapse;
+	width: 80%;
+}
+#add-offshot tr{
+	border: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: black;
+	height: 50px;
+}
+#add-offshot button.delete{
+	width: 100%;
+	border-color: #9e3434;
+}
+#add-offshot button.delete:hover{
+	background-color: #9e343459;
+}

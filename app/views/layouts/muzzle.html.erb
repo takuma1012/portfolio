@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	    <title>TheMuzzle</title>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=devise-width,initial-scale=1">
+	    <%= stylesheet_link_tag    'application_muzzle', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    	<link href="asstes/stylesheets/featherlight.min.css" title="Featherlight Styles" rel="stylesheet">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.1.0/css/drawer.min.css">
+		<%= csrf_meta_tags %>
+		<style>
+			.lightbox { display: none; }
+		</style>
+		<script type="text/javascript" src="assets/javascripts/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<script type="text/javascript" src="assets/javascripts/featherlight.min.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+		<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.1.0/js/drawer.min.js"></script>
+	</head>
+	<body>
+	<header id="header">
+ 		<ul id="nav">
+				<%= link_to muzzle_path do %>
+			<li class="muzzle"><img src="/muzzle_logo3.png" width="100%" height="100%"></li><% end %>
+				<%= link_to muzzle_cds_path do %>
+			<li>Discography</li><% end %>
+				<%= link_to muzzle_offshots_path do %>
+			<li>Offshot</li><% end %>
+				<%= link_to muzzle_interviews_path do %>
+			<li>Interview</li><% end %>
+				<%= link_to muzzle_blogs_path do %>
+			<li>Blog</li><% end %>
+				<%= link_to muzzle_contacts_new_path do %>
+			<li>Contact</li><% end %>
+				<%= link_to muzzle_orders_new_path do %>
+			<li>Cart</li><% end %>
+
+			<% if user_signed_in? %>
+					<%= link_to muzzle_users_path do %>
+				<li><%= current_user.nick_name %>さん</li><% end %>
+					<%= link_to destroy_user_session_path, method: :delete do %>
+				<li>SignOut</li><% end %>
+			<% else %>
+					<%= link_to new_user_session_path do %>
+				<li>SignIn</li><% end %>
+			<% end %>
+		</ul>
+
+<body class="drawer drawer--top">
+
+<img src="/muzzle_logo3.png" width="200px" height="80px" class="drawer-toggle">
+
+<nav class="drawer-nav">
+  <ul class="drawer-menu">
+    <!-- ドロワーメニューの中身 -->
+    	<%= link_to muzzle_path do %>
+    <li>TOP</li><% end %>
+    	<%= link_to muzzle_cds_path do %>
+	<li>DISCOGRAPHY</li><% end %>
+		<%= link_to muzzle_offshots_path do %>
+	<li>OFFSHOT</li><% end %>
+		<%= link_to muzzle_interviews_path do %>
+	<li>INTERVIEW</li><% end %>
+		<%= link_to muzzle_blogs_path do %>
+	<li>BLOG</li><% end %>
+		<%= link_to muzzle_contacts_new_path do %>
+	<li>CONTACT</li><% end %>
+		<%= link_to muzzle_orders_new_path do %>
+	<li>CART</li><% end %>
+
+	<% if user_signed_in? %>
+			<%= link_to muzzle_users_path do %>
+		<li>MEMBER</li><% end %>
+			<%= link_to destroy_user_session_path, method: :delete do %>
+		<li>SIGN OUT</li><% end %>
+	<% else %>
+			<%= link_to new_user_session_path do %>
+		<li>SIGN IN</li><% end %>
+	<% end %>
+  </ul>
+</nav>
+
+</header><!--/header-->
+
+
+
+
+
+
+	<% if flash[:notice] %>
+		<i class="alert"><%= flash[:notice] %></i>
+	<% end %>
+
+	    <%= yield %>
+
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<div id="add-cd">
+
+<% if @item.errors.any? %>
+  <div>
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li style="list-style: none;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+	<h2>GOODS編集</h2>
+
+	<%= form_for @item, url: admin_item_path, method: :patch do |f| %>
+		<%= f.text_field :article_name, :placeholder => "GOODS名", :size => "50%" %>
+		<%= f.attachment_field :article_image %><br>
+		<%= f.text_field :stock, :placeholder => "在庫数" %>
+		<%= f.date_field :release_date %>
+		￥<%= f.text_field :price, :placeholder => "価格"%><i>(tax-in)</i><br>
+		<button type="submit">編集</button>
+	<% end %>
+</div>

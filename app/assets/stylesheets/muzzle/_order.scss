@@ -1,0 +1,116 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*item-cart*/
+#line-up{
+	margin: 60px auto;
+	padding: auto;
+	padding: 60px;
+	width: 60%;
+	background-color: rgba(255, 255, 255, .3);
+	box-shadow: 2px 2px 15px 15px rgba(255,255,255,.8) inset;
+}
+#line-up h1{
+	margin-top: 0;
+}
+#line-up table{
+	text-align: center;
+	margin: 0 auto;
+	padding: 40px;
+	border-collapse: collapse;
+	width: 80%;
+}
+#line-up tr{
+	border: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: black;
+	height: 50px;
+}
+#line-up td{
+	background-color: rgba(255, 255, 255, .3);
+}
+#line-up h2{
+	margin: auto;
+	margin-top: 30px;
+	width: 80%;
+	border: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: black;
+}
+#line-up p{
+	margin: auto;
+	margin-bottom: 30px;
+	width: 80%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, .3);
+}
+#line-up button{
+	width: 80%;
+	height: 40px;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff5c;
+    border: solid 2px #820000;
+    border-radius: 3px;
+    transition: .4s;
+}
+#line-up button:hover {
+    background: #800e0ea8;
+    color: white;
+}
+.h3-dest{
+	margin-bottom: 0;
+}
+#cart-destination{
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+	// padding-left: 10%;
+	text-align: center;
+}
+#cart-destination div.form_box{
+	width: 45%;
+	display: inline-block;
+}
+#cart-destination div.form_box-lg{
+	width: 90%;
+    margin: auto;
+}
+#cart-destination label, #cart-destination i{
+  	float: left;
+}
+#cart-destination .single{
+	width: 100%;
+	margin: 0 auto;
+}
+#cart-destination .double{
+	width: 95%;
+	margin: 0 auto;
+}
+
+/*item-pay*/
+#pay-dest{
+	height: auto;
+}
+#line-up p.order-dest{
+	height: auto;
+	width: 70%;
+	line-height: 30px;
+	padding-left: 10%;
+	text-align: left;
+}
+#line-up h2.pay{
+	margin-bottom: 30px;
+}
+#line-up p.pay{
+	width: 70%;
+	padding-left: 10%;
+	text-align: left;
+}

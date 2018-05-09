@@ -1,0 +1,35 @@
+<div id="self-box">
+
+<% if @interviews.blank? %>
+	<h1>Comming soon!!</h1>
+
+<% else %>
+	<h1>Self Interview</h1>
+		<hr width="100%" color="black">
+
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th class="date">Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @interviews.each_with_index do |int, i| %>
+				<tr>
+					<td><%= link_to muzzle_interviews_path, "data-featherlight" => ".self#{i}" do %>
+						<%= int.title %><% end %></td>
+					<td class="date"><%= int.created_at.strftime('%Y年%m月%d日 %H:%M') %></td>
+				</tr>
+					<%= content_tag(:div, class: ["lightbox", "self#{i}"]) do %>
+						<h2 class="int-title"><%= int.title %></h2>
+						<p class="self-date"><%= int.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+						<hr width="100%" color="black">
+						<p class="int-body"><%= simple_format(int.body) %></p>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<%= paginate @interviews %>
+<% end %>

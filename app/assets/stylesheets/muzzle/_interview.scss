@@ -1,0 +1,51 @@
+// Place all the styles related to the Interviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*self_index*/
+#self-box{
+	width: 50%;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 30px;
+	background-color: rgba(255,255,255,.6);
+	text-align: left;
+}
+#self-box h1{
+	text-align: center;
+	margin: 0;
+}
+#self-box table{
+	width: 80%;
+	border-collapse: collapse;
+	margin: auto;
+}
+#self-box tr{
+	border: 0;
+	border-bottom: 2px;
+	border-color: #7a7a7a;
+	border-style: solid;
+}
+#self-box td{
+	height: 50px;
+}
+#self h2{
+	margin: 0;
+}
+#self p.self-date{
+	text-align: right;
+	margin: 0;
+}
+
+/*self_show*/
+#self_show-box{
+	width: 50%;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 30px;
+	background-color: rgba(255,255,255,.6);
+	word-break: break-all;
+	text-align: left;
+}

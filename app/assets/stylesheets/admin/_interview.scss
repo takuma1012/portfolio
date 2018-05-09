@@ -1,0 +1,78 @@
+// Place all the styles related to the Interviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*add_self*/
+#add-self{
+	width: 60%;
+	margin: auto;
+	background-color: rgba(255,255,255,.4);
+	padding: 30px 0;
+	margin-bottom: 40px;
+}
+#add-self h2{
+	margin:0;
+}
+#add-self textarea{
+	margin: 10px 0;
+}
+#add-self button{
+	border: 1px;
+    border: solid 2px #000000;
+    border-radius: 3px;
+    width: 60%;
+}
+#add-self button:hover{
+	background-color: #2347738c;
+	color: black;
+}
+
+/*index-self*/
+#index-self{
+	background-color: rgba(255,255,255, .6);
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 30px 0;
+	width: 60%;
+	height: auto;
+}
+#index-self table{
+	text-align: center;
+	margin: 0 auto;
+	padding: 40px;
+	border-collapse: collapse;
+	width: 80%;
+}
+#index-self tr{
+	border: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color: black;
+	height: 50px;
+}
+#self h2{
+	margin: 0;
+}
+#self p.self-date{
+	text-align: right;
+	margin: 0;
+}
+
+/*edit-self*/
+#edit-self{
+	width: 60%;
+	margin: auto;
+	margin-bottom: 60px;
+	background-color: rgba(255,255,255,.4);
+	padding: 30px 0;
+}
+#edit-self h2{
+	margin:0;
+}
+#edit-self textarea{
+	margin: 10px 0;
+}
+#edit-self button{
+    width: 60%;
+}

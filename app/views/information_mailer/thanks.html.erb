@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1><%= @order.last_name %><%= @order.first_name %> 様</h1>
+	<p>この度は TheMuzzle で商品をお買い上げいただきありがとうございます。<br>
+	<br>
+		お振込みの確認ができ次第、順次発送いたします。<br>
+		以下ご注文内容をご確認の上、２週間以内にお振込みください。<br>
+		<br>
+		請求発行日: <%= Date.today.strftime("%Y-%m-%d") %>
+		<hr>
+		<br>
+		◆ご注文内容<br>
+		<br>
+		<% @art_hist.each do |ah| %>
+			<%= ah.article.article_name %>× <%= ah.quantity %> <br>
+		<% end %>
+		<br>
+		<hr>
+		<br>
+		◆お買い上げ合計金額: ￥<%= @order.price.to_s(:delimited) %>(税,送料込み)<br>
+		<br>
+		<hr><br>
+		◆お振込み口座<br>
+		<br>
+		三菱UFJ銀行<br>
+		ドコカノ支店<br>
+		普通 ********<br>
+		<br>
+		口座名義: TheMuzzle(カ<br>
+		<br>
+		<hr>
+		<br>
+		◆お届け先情報<br>
+		<%= @order.postal_code.insert(3, '-') %><br>
+		<%= @order.prefecture %> <%= @order.city %><br>
+		<%= @order.address %> <%= @order.building %><br>
+		<br>
+		<hr>
+		<br>
+		※本メール発行日より２週間以内に入金の確認が取れない場合はキャンセルとさせていただきますので、何卒ご了承ください。<br>
+		<br>
+		<hr>
+		<br>
+		これからもThe Muzzleを宜しくお願い致します。
+	</p>
+  </body>
+</html>

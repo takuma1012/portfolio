@@ -1,0 +1,78 @@
+<div id="index">
+
+	<div class="tabs">
+
+			<!-- /single -->
+
+  		<div class="tab-2">
+    		<label for="tab2-1">Single</label>
+    		<input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    		<div>
+    		<% if @single.blank? %>
+    			<h1 style="color: white;">Comming soon!!</h1>
+    		<% else %>
+			  <% @single.each_with_index do |single, s| %>
+				<div id="cd-index">
+					<div id="jacket">
+						<%= link_to muzzle_cds_path, "data-featherlight" => ".cd#{s}" do %>
+						<%= attachment_image_tag single, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '200', height: '200'%>
+					</div><% end %>
+				</div>
+				<%= render 'layouts/muzzle/article_single', single: single, s: s %>
+			  <% end %>
+			<% end %>
+		    </div>
+		</div>
+
+			<!-- single/ -->
+			<!-- /album -->
+
+	    <div class="tab-2">
+	    	<label for="tab2-2">Album</label>
+	    	<input id="tab2-2" name="tabs-two" type="radio">
+	    	<div>
+		    <% if @album.blank? %>
+		    	<h1 style="color: white;">Comming soon!!</h1>
+		    <% else %>
+		      <% @album.each_with_index do |album, a| %>
+		      <% a += 100 %>
+				<div id="cd-index">
+					<div id="jacket">
+						<%= link_to muzzle_cds_path, "data-featherlight" => ".cd#{a}" do %>
+						<%= attachment_image_tag album, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '200', height: '200'%>
+					</div><% end %>
+				</div>
+				<%= render 'layouts/muzzle/article_album', album: album, a: a %>
+			  <% end %>
+			<% end %>
+			</div>
+		</div>
+
+			<!-- album/ -->
+			<!-- /goods -->
+
+	    <div class="tab-2">
+	    	<label for="tab2-3">Goods</label>
+	    	<input id="tab2-3" name="tabs-two" type="radio">
+	    	<div>
+	    	<% if @goods.blank? %>
+	    		<h1 style="color: white;">Comming soon!!</h1>
+	    	<% else %>
+		      <% @goods.each_with_index do |goods, g| %>
+		      <% g += 1000 %>
+				<div id="cd-index">
+					<div id="jacket">
+						<%= link_to muzzle_cds_path, "data-featherlight" => ".cd#{g}" do %>
+						<%= attachment_image_tag goods, :article_image, format: 'jpg', fallback: "/no_image_m.png", width: '200', height: '200'%>
+					</div><% end %>
+				</div>
+				<%= render 'layouts/muzzle/article_goods', goods: goods, g: g %>
+			  <% end %>
+			<% end %>
+			</div>
+		</div>
+
+			<!-- goods/ -->
+
+	</div>
+</div>
