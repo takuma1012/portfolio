@@ -76,6 +76,9 @@ header {
   border-color: black;
   transition: .4s; }
 
+#nav li.logo768 {
+  display: none; }
+
 #nav li.muzzle {
   display: inline-block;
   margin: auto;
@@ -811,3 +814,80 @@ p.member_info {
     font-size: 20px; } }
 
 /*# sourceMappingURL=muzzle.css.map */
+
+
+@media screen and (max-width:768px){
+  #nav{
+    padding-left: 0;
+    padding: 0 auto!important;
+  }
+  #nav li{
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    color: white;
+    line-height: 90px;
+    margin: 0;
+  }
+  #nav li.muzzle{
+    display: none;
+  }
+  #nav li.logo768{
+    margin-left: 10px;
+    margin-right: 20px;
+    height: 90px;
+  }
+  #nav li.logo768:hover{
+    line-height: 80px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: red;
+  }
+  div.jacket{
+    margin-left: 0!important;
+    width: 50%;
+  }
+  div.jacket img{
+    width: 80%;
+    height: 80%;
+  }
+  #pop{
+    margin-top: 0;
+  }
+  #pop p{
+    font-size: 150px!important;
+  }
+  .featherlight .featherlight-content{
+    text-align: center!important;
+  }
+  div#self-box{
+    width: 80%;
+  }
+  .featherlight .featherlight-content{
+    width: 80%;
+    max-width: 90%!important;
+  }
+  #blog-box{
+    width: 80%;
+    margin: auto;
+  }
+  #formarea{
+    width: 80%;
+  }
+  #formarea input{
+    width: 80%;
+  }
+  #formarea textarea{
+    width: 80%;
+  }
+  #line-up{
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  #sign-box{
+    width: 80%;
+  }
+}

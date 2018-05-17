@@ -22,6 +22,10 @@
 	<body>
 	<header id="header">
  		<ul id="nav">
+ 			<!-- レスポンシブ(タブレットLOGO) -->
+ 				<%= link_to muzzle_path do %>
+ 			<li class="logo768"><img src="/Logo768.png" width="90px" height="90px"></li><% end %>
+ 			<!-- PC view -->
 				<%= link_to muzzle_path do %>
 			<li class="muzzle"><img src="/muzzle_logo3.png" width="100%" height="100%"></li><% end %>
 				<%= link_to muzzle_cds_path do %>
@@ -47,6 +51,8 @@
 				<li>SignIn</li><% end %>
 			<% end %>
 		</ul>
+
+<!-- レスポンシブ(モバイル) -->
 
 <body class="drawer drawer--top">
 
@@ -83,11 +89,6 @@
 </nav>
 
 </header><!--/header-->
-
-
-
-
-
 
 	<% if flash[:notice] %>
 		<i class="alert"><%= flash[:notice] %></i>

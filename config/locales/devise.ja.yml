@@ -75,6 +75,8 @@ ja:
       update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを送信しましたので、リンクから更新を有効にしてください。"
       #Your account has been updated successfully.
       updated: "アカウントを更新しました"
+      leave blank if you don't want to change it: "変更しない場合は空欄にしてください。"
+      password_confirmation: "パスワード確認"
     sessions:
       #Signed in successfully.
       signed_in: "ログインしました"

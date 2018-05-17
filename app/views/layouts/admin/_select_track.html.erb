@@ -1,0 +1,2 @@
+<%#= label :lyric, :track, style: "color: black;" %><br>
+<%= collection_select :lyric, :track_id, Track.where(article_id: article_id), :id, :track_name %>

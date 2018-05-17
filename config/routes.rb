@@ -1,28 +1,29 @@
 Rails.application.routes.draw do
 
-###Guest###
-  devise_for :users,
-    :path           => "muzzle/users",
-    controllers: { :registrations  =>      'muzzle/users/registrations',
-                   :sessions       =>      'muzzle/users/sessions',
-                   :omniauth_callbacks =>  'muzzle/users/omniauth_callbacks',
-                   :omniauth_providers =>  [:twitter, :google] }
 
-    root    'root#top'
-  namespace :muzzle do
+  ### Guest ###
+    devise_for :users,
+      :path           => "users",
+      controllers: { :registrations  =>      'muzzle/users/registrations',
+                     :sessions       =>      'muzzle/users/sessions',
+                     :omniauth_callbacks =>  'muzzle/users/omniauth_callbacks',
+                     :omniauth_providers =>  [:twitter, :google] }
+
+  scope :module => :muzzle, :as => :muzzle do
+    get     '',                 to: 'root#top'
 
     get     'users/edit'
-    get     '/users',           to: 'users#show',       as: 'users'
-    patch   '/users/:id',       to: 'users#update'
+    get     'users',            to: 'users#show',       as: 'users'
+    patch   'users/:id',        to: 'users#update'
 
     get     'orders/new'
-    post    '/orders',          to: 'orders#create',    as: 'orders'
-    delete  '/orders',          to: 'orders#destroy'
+    post    'orders',           to: 'orders#create',    as: 'orders'
+    delete  'orders',           to: 'orders#destroy'
     get     'orders/thank'
 
     get     'contacts/new',     to: 'contacts#new'
     get     'contacts/sent',    to: 'contacts#sent'
-    post    '/contacts',        to: 'contacts#create'
+    post    'contacts',         to: 'contacts#create'
 
     get     'items/index',      as: 'items'
 
@@ -61,6 +62,12 @@ Rails.application.routes.draw do
     get     'offshots',      to: 'offshots#index',   as: 'offshots'
     post    'offshot',       to: 'offshots#create',  as: 'offshot'
     delete  '/offshot/:id',  to: 'offshots#destroy', as: 'delete_offshot'
+
+    resources :lyrics,      only: [:index, :new, :create, :edit, :update, :destroy] do
+      collection do
+        get 'get_tracks'
+      end
+    end
 
     resources :items,       only: [:index, :new, :create, :edit, :update, :destroy]
     resources :cds,         only: [:index, :new, :create, :edit, :update, :destroy]

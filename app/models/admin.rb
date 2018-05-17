@@ -7,4 +7,5 @@ class Admin < ApplicationRecord
          has_many :interviews
          has_many :blogs
          has_many :offshots
+         has_many :lyrics
 end
