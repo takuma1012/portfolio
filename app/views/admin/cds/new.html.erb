@@ -22,7 +22,7 @@
 			<%= f.fields_for :tracks do |ff| %>
 				<%= ff.number_field :track_num, :min => "1", :max => "99" %>
 				<%= ff.text_field :track_name, :size => "40%", :placeholder => "曲名" %>
-				<%= ff.text_field :lyric, :placeholder => "作詞者"  %>
+				<%= ff.text_field :lyricer, :placeholder => "作詞者"  %>
 				<%= ff.text_field :composer, :placeholder => "作曲者"  %>
 				<%= ff.link_to_remove do %>
 				<button class="batsu">✖</button><% end %>

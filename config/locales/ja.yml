@@ -23,7 +23,7 @@ ja:
         article_id: 商品ID
         track_name: 曲名
         track_num:  曲No.
-        lyric:      作詞者
+        lyricer:      作詞者
         composer:   作曲者
       contact:
         name: 　名前

@@ -2,6 +2,7 @@ class Article < ApplicationRecord
 	has_many :tracks, dependent: :destroy, inverse_of: :article
 	has_many :article_histories, dependent: :destroy
 	has_many :histories, through: :article_histories
+	has_many :lyrics, dependent: :destroy
 
 	accepts_nested_attributes_for :tracks, allow_destroy: true
 

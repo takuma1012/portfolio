@@ -1,6 +1,7 @@
 class Admin::CdsController < Admin::Base
   def index
     @cds = Article.where("(type = ?) OR (type = ?)", "Single", "Album").page(params[:page]).per(5).reverse_order
+    @track = Track.all
   end
 
   def new
@@ -35,6 +36,6 @@ class Admin::CdsController < Admin::Base
   private
   def cd_params
     params.require(:article).permit(:article_name, :type, :price, :stock, :release_date, :article_image,
-                                    :tracks_attributes => [:id, :article_id, :lyric, :composer, :track_num, :track_name, :_destroy])
+                                    :tracks_attributes => [:id, :article_id, :lyricer, :composer, :track_num, :track_name, :_destroy])
   end
 end

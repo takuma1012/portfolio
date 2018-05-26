@@ -10,6 +10,7 @@
 			.lightbox { display: none; }
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/javascripts/featherlight.min.js" charset="utf-8"></script>
 		<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 	    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
@@ -61,7 +62,7 @@
 	</header><!-- /header -->
 
 	<% if flash[:notice] %>
-		<i class="alert"><%= flash[:notice] %></i>
+		<i class="alert" style="color: white;"><%= flash[:notice] %></i>
 	<% end %>
 
 

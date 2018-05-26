@@ -1,0 +1,24 @@
+<div id="add-cd">
+	<h1>新規歌詞</h1>
+	<%= form_for @lyric, url: admin_lyrics_path, method: :post, local: true do |f| %>
+
+		<div style="display: inline-block;">
+			<%= f.label :CD %><br>
+			<%= f.collection_select :article_id, @articles, :id, :article_name, :prompt => "選択してください", class: "double", required: true %>
+		</div>
+
+		<div class="track" style="display: inline-block; margin: 0 40px;">
+			<%= render partial: 'layouts/admin/select_track', locals: {article_id: Article.first.id} %>
+		</div>
+
+		<div style="display: inline-block;">
+			<%= f.label :作詞者 %><br>
+			<%= f.collection_select :admin_id, @admins, :id, :name, :prompt => "選択してください", required: true %><br>
+		</div><br>
+
+		<%= f.label :lyric %><br>
+		<%= f.text_area :lyric, rows: "35", cols: "80" %>
+
+		<button type="submit">投稿</button>
+	<% end %>
+</div>

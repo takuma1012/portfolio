@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180501073353) do
+ActiveRecord::Schema.define(version: 20180526051748) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20180501073353) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "about"
+    t.string "social"
+    t.string "work"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -107,6 +110,18 @@ ActiveRecord::Schema.define(version: 20180501073353) do
     t.index ["admin_id"], name: "index_interviews_on_admin_id"
   end
 
+  create_table "lyrics", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.integer "track_id", null: false
+    t.integer "admin_id", null: false
+    t.text "lyric", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_lyrics_on_admin_id"
+    t.index ["article_id"], name: "index_lyrics_on_article_id"
+    t.index ["track_id"], name: "index_lyrics_on_track_id"
+  end
+
   create_table "main_pages", force: :cascade do |t|
     t.string "main_image_id"
     t.datetime "created_at", null: false
@@ -131,7 +146,7 @@ ActiveRecord::Schema.define(version: 20180501073353) do
     t.integer "article_id", null: false
     t.string "track_name", null: false
     t.integer "track_num", null: false
-    t.string "lyric"
+    t.string "lyricer"
     t.string "composer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

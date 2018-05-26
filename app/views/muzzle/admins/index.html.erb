@@ -1,0 +1,16 @@
+<div id="self-box" style="text-align: center;">
+	<h2>Profile</h2>
+
+	<% @admins.each do |admin| %>
+	<div style="border-style: solid; margin: 10px; text-align: left; padding-left: 1em;">
+		Name: <%= admin.name %><br>
+		work: <%= admin.work %><br>
+		about: <%= simple_format(admin.about) %>
+		<%= link_to "Twitter", admin.social, target: ["_blank"] %>
+	</div>
+	<% end %>
+
+	<%= link_to muzzle_contacts_new_path do %>
+		<h2>Contact</h2>
+	<% end %>
+</div>
