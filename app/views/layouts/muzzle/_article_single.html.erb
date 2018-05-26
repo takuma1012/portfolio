@@ -1,3 +1,11 @@
+<style>
+	#lyric_area {
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		user-select: none;
+	}
+</style>
+
 <!-- 詳細 -->
 <%= content_tag(:div, class: ["lightbox", "cd#{s}", "clearfix"]) do %>
 	<div id="jacket-show">
@@ -7,13 +15,31 @@
 		<p class="title"><%= single.article_name %></p>
 		<hr width="100%">
 			<% single.tracks.each do |t| %>
+			<%= link_to muzzle_cds_path, "data-featherlight" => ".track#{t.id}" do %>
 			<p class="track">
-				<%= t.track_num %>.<%= t.track_name %><br/>
+				<%= t.track_num %>.<%= t.track_name %><% end %><br/>
 			<% end %></p>
 		<hr width="100%">
 		<p class="show-price">￥<%= single.price.to_s(:delimited) %>(tax-in)</p>
 	</div>
 	<%= link_to muzzle_orders_new_path(id: single.id) do %>
 		<button id="show-buy"><strong>Buy this</strong></button>
+	<% end %>
+<% end %>
+
+<!-- 歌詞 -->
+<% single.tracks.each do |t, l| %>
+	<%= content_tag(:div, class: ['lightbox', "track#{t.id}"]) do %>
+		<h3><%= t.track_name %></h3>
+		<hr width="100%" color="black">
+		<p>作詞:<%= t.lyricer %> / 作曲:<%= t.composer %></p>
+		<hr width="100%" color="black">
+		<% if t.lyric.blank? %>
+			<p>この曲の歌詞はありません</p>
+		<% else %>
+			<div id="lyric_area" oncopy="return false" oncut="return false" onmuousemove="return false" onmousedown="return false">
+				<p><%= simple_format(t.lyric.lyric) %></p>
+			</div>
+		<% end %>
 	<% end %>
 <% end %>

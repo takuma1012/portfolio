@@ -1,10 +1,10 @@
 class Admin::RootController < Admin::Base
   def top
-    @main = MainPage.find_by(id: 2)
-    @news = Topic.new
+    @main = MainPage.first
+    # @news = Topic.new
+    # @main = MainPage.new
 
   	now = Time.current
-  	# binding.pry
   	unless History.where(created_at: 2.day.ago..now).blank?
   		@newhist = History.where(created_at: 2.day.ago..now)
   	end
@@ -15,16 +15,17 @@ class Admin::RootController < Admin::Base
   end
 
   def create
-    @news = Topic.new(news_params)
-    @main.save
+    # @news = Topic.new(news_params)
+    @main = MainPage.new(main_params).save
+    redirect_to admin_root_path
   end
 
   def update
-    @main = MainPage.find_by(id: 2)
+    @main = MainPage.first
     if @main.update(main_params)
       redirect_to admin_root_path, notice: 'TOP画像を更新しました'
     else
-      render :top
+      render admin_root_path
     end
   end
 

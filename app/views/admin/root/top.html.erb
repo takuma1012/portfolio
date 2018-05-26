@@ -2,7 +2,6 @@
 	<h2>お知らせ</h2>
 
 	<hr>
-	<%# binding.pry %>
 	<% if @newmail.present? %>
 		<%= link_to admin_mails_path do %>
 		<p>新着メールが <%= @newmail.length %> 件</p><% end %>
@@ -24,6 +23,7 @@
 <div id="add-list">
 	<h2>新規追加</h2>
 	<%= form_for @main, url: admin_tops_path, method: :patch do |f| %>
+	<%#= form_for @main, url: admin_top_path, method: :post do |f| %>
 		<%= f.label :"TOP画像" %>
 		<%= f.attachment_field :main_image %>
 		<button type="submit">変更</button>

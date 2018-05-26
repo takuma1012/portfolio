@@ -4,7 +4,7 @@
 
 		<div style="display: inline-block;">
 			<%= f.label :CD %><br>
-			<%= f.collection_select :article_id, @articles, :id, :article_name, :prompt => "選択してください", class: "double" %>
+			<%= f.collection_select :article_id, @articles, :id, :article_name, :prompt => "選択してください", class: "double", required: true %>
 		</div>
 
 		<div class="track" style="display: inline-block; margin: 0 40px;">
@@ -13,7 +13,7 @@
 
 		<div style="display: inline-block;">
 			<%= f.label :作詞者 %><br>
-			<%= f.collection_select :admin_id, @admins, :id, :name, :prompt => "選択してください" %><br>
+			<%= f.collection_select :admin_id, @admins, :id, :name, :prompt => "選択してください", required: true %><br>
 		</div><br>
 
 		<%= f.label :lyric %><br>

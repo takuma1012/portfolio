@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   ### Guest ###
     devise_for :users,
       :path           => "users",
@@ -34,6 +33,8 @@ Rails.application.routes.draw do
     get     'offshots/index',   as: 'offshots'
 
     get     'blogs/index',      as: 'blogs'
+
+    get     'us',               to: 'admins#index',     as: 'admins'
   end
 
 ###Admin###
