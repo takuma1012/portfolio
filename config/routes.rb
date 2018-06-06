@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     patch   'users/:id',        to: 'users#update'
 
     get     'orders/new'
-    post    'orders',           to: 'orders#create',    as: 'orders'
-    delete  'orders',           to: 'orders#destroy'
+    post    'orders',           to: 'orders#create',    as: 'order'
+    delete  'orders',           to: 'orders#destroy',   as: 'order_delete'
     get     'orders/thank'
 
     get     'contacts/new',     to: 'contacts#new'

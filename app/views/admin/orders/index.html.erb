@@ -33,7 +33,7 @@
 		<h3>お客様情報</h3>
 		<p><%= order.last_name %> <%= order.first_name %><br>
 			<%= order.last_name_kana %> <%= order.first_name_kana %><br>
-			〒<%#= order.postal_code.insert(3, '-') %><br>
+			〒<%= order.postal_code.insert(3, '-') %><br>
 			<%= order.prefecture %> <%= order.city %> <%= order.address %> <%= order.building %><br>
 			<%= order.phone %><br>
 			<%= order.email %>

@@ -17,13 +17,14 @@
 <% else %>
 
 	<h1>ご購入確認</h1>
-		<%= form_with(model: @orders, url: muzzle_orders_path, datakey: ENV['PAYJP_API_KEY'], html:{name: "form1"} , local: true) do |f| %>
+		<%= form_with(model: @orders, url: muzzle_order_path, datakey: ENV['PAYJP_API_KEY'], html:{name: "form1"} , local: true) do |f| %>
 	<table id="table">
 		<tr>
 			<th>商品名</th>
 			<th>価格</th>
 			<th>数量</th>
 			<th>小計</th>
+			<th> </th>
 		</tr>
 		<% @arts.each_with_index do |art, i| %>
 		<%= f.fields_for :article_histories do |ah| %>
@@ -31,12 +32,17 @@
 			<%= ah.hidden_field :article_id, value: art.id %>
 			<td><%= art.article_name %></td>
 			<td><%= art.price %></td>
-			<td><%= ah.number_field :quantity, max:10, min:1, id:"qty#{i}", onChange: "keisan()", value:0 %></td>
+			<td><%= ah.number_field :quantity, max:10, min:0, id:"qty#{i}", onChange: "keisan()", value:0 %></td>
 			<%= content_tag(:td, '', id: "field#{i}") do %><%= 0.to_s(:delimited) %><% end %>
 		</tr>
 		<% end %>
 		<% end %>
-	</table>
+	</table><br>
+
+	<%= link_to muzzle_order_delete_path, method: :delete, data: { confirm: 'カートを空にしてよろしいですか?' } do %>
+		<button class="delete">カートを空にする</button>
+	<% end %>
+
 	<h2 class="h3-dest">送り先</h2>
 	<div id="cart-destination">
 		<i style="float: none"><strong>※送料は全国一律 ￥510 です</i></strong><br>
@@ -105,7 +111,7 @@
 	<%= f.hidden_field :price, id: "sum", value: 0 %>
 	<p><strong>￥ <%= content_tag(:span, '', id: "field_total") %>- (税、送料込)</strong></p>
 
-	<button type="submit" id="fom1-buy"><strong>購入確定</strong></button>
+	<%= content_tag(:button, '購入確定', data: { confirm: '注文を確定します。よろしいですか?' }) %>
 	<% end %>
 <% end %>
 </div>
